@@ -9,8 +9,15 @@ and plots all three along with their corresponding Fourier transforms.
 The w-term image is tapered with a prolate spheroidal wave function (PSWF) before its F.T is taken. For w=0, the PSWF
 is all there is.
 
-The source includes the shared library sphfn.so generated using f2py.
-
 For more information, refer Frater and Doherty 1980 and Cornwell et al. 2008.
 
 Libraries used - Matplotlib, Numpy.
+
+Included files:
+===============
+
+sphfn.so - Shared library that computes the PSWF; generated using f2py.
+
+wterm.py - Computes and plots the phase variation in the w-term as a function of distance from the phase centre.
+
+zeropad.py - Modified version of wterm.py that illustrates the effects of zero-padding in the spatial domain.
