@@ -19,6 +19,10 @@
 # e-mail: iniyan@ast.uct.ac.za
 # Last modified: Oct. 2012
 
+# Version 0.2 - Thanks to Thuso Simon for showing me how to better use numpy arrays and get rid of loops.
+# If you feel this code is fast, it's due to him!
+
+
 import os
 import sys
 import numpy as np
@@ -49,7 +53,7 @@ def compute_pswf(image_dimension):
  eta = 0.0
  j = image_dimension-1
  norm_factor = 1.0 / float(nr-1)
- for i in range(1,nr+1):
+ for i in xrange(1,nr+1):
   eta = float(nr-i) * norm_factor
   fx, ierr = sphfn.sphfn(ialpha,isupp,iflag,eta)
   conv_arr[i-1] = fx
@@ -69,9 +73,8 @@ def wtermcalc(lmdim,delta_lm,maxw,color):
 
  #make 2-D spheroidal matrix
  conv_array = np.zeros((lmdim,lmdim));
- for m in np.arange(0,lmdim):
-  for l in np.arange(0,lmdim):
-   conv_array[m][l] = conv_array_m[m] * conv_array_l[l];
+ for m in xrange(0,lmdim):
+  conv_array[m,:] = conv_array_m[m] * conv_array_l;
 
  # Make L, M matrices of the required dimensions that contain the 
  # delta_l and delta_m values from the image centre as elements.
