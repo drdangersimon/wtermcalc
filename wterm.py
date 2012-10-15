@@ -107,28 +107,20 @@ def wtermcalc(lmdim,delta_lm,maxw,color):
   
  #Plotting...
  fig = pl.figure();
- fig.add_subplot(2,3,1);
+ fig.add_subplot(2,3,1,title='w=Max_w');
  pl.imshow(wph,cmap=color);
- fig.add_subplot(2,3,2);
+ fig.add_subplot(2,3,2,title='w=Max_w/2');
  pl.imshow(wph2,cmap=color);
- fig.add_subplot(2,3,3);
+ fig.add_subplot(2,3,3,title='w=0 (just the tapering PSWF)');
  pl.imshow(wph3,cmap=color);
 
- # Rescale axes and plot the F.T
- pltft1=fig.add_subplot(2,3,4);
+ fig.add_subplot(2,3,4,title='Fourier Transform');
  pl.imshow(ftwph,cmap=color);
- pltft1.set_xlim(lmdim/2+lmdim/4,lmdim/2-lmdim/4)
- pltft1.set_ylim(lmdim/2+lmdim/4,lmdim/2-lmdim/4)
-
- pltft2=fig.add_subplot(2,3,5);
+ fig.add_subplot(2,3,5,title='Fourier Transform');
  pl.imshow(ftwph2,cmap=color);
- pltft2.set_xlim(lmdim/2+lmdim/4,lmdim/2-lmdim/4)
- pltft2.set_ylim(lmdim/2+lmdim/4,lmdim/2-lmdim/4)
-
- pltft3=fig.add_subplot(2,3,6);
+ fig.add_subplot(2,3,6,title='Fourier Transform');
  pl.imshow(ftwph3,cmap=color);
- pltft3.set_xlim(lmdim/2+lmdim/4,lmdim/2-lmdim/4)
- pltft3.set_ylim(lmdim/2+lmdim/4,lmdim/2-lmdim/4)
+
  pl.show();
  
 #=============================
