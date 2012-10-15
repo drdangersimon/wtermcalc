@@ -12,3 +12,5 @@ is all there is.
 The source includes the shared library sphfn.so generated using f2py.
 
 For more information, refer Frater and Doherty 1980 and Cornwell et al. 2008.
+
+Libraries used - Matplotlib, Numpy.
