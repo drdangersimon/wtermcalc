@@ -9,4 +9,6 @@ and plots all three along with their corresponding Fourier transforms.
 The w-term image is tapered with a prolate spheroidal wave function (PSWF) before its F.T is taken. For w=0, the PSWF
 is all there is.
 
+The source includes the shared library sphfn.so generated using f2py.
+
 For more information, refer Frater and Doherty 1980 and Cornwell et al. 2008.
