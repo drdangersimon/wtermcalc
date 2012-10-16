@@ -100,8 +100,8 @@ def wtermcalc(lmdim,delta_lm,maxw,zeropad,color):
  ftwph = np.fft.fftshift(ftwph);
   
  ftpad = np.fft.fft2(padarr);
- ftpad = np.sqrt(ftwph.real**2+ftwph.imag**2)
- # No need to shift here because of the zero-padding???
+ ftpad = np.sqrt(ftpad.real**2+ftpad.imag**2)
+ ftpad = np.fft.fftshift(ftpad);
 
  #Plotting...
  fig = pl.figure();
